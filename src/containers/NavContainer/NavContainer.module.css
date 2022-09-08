@@ -1,0 +1,54 @@
+.nav_container_main{
+    display: flex;
+    width:68%;
+    flex-direction: row;
+    position:absolute;
+    top:118px;
+}
+
+.nav_content_left{
+    width:81%;
+}
+
+.nav_content_right{
+    width: 19%;
+    margin-top:8px;
+}
+
+.nav_item_container{
+    width: fit-content;
+    height: 44.2px;
+    background: #007EFF;
+    margin-right: 21px;
+}
+
+.nav_content{
+    display: inline-block;
+    height: 20px;
+    margin: 14px 10px 10px 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+
+.nav_text{
+    margin: 0 0 33px 66px;
+    width: fit-content;
+    height: 54px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 54px;
+    color: #000000;
+}
+
+.nav_list{
+    display:flex;
+    flex-direction: row;
+    margin: 0px 0px 35px 66px;
+}

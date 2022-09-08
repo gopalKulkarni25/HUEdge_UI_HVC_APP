@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    width:68%;
+    flex-direction: row;
+    position:absolute;
+    top:284px;
+    min-height:750px;
+    padding-left:75px;
+}

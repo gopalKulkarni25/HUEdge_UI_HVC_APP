@@ -1,0 +1,84 @@
+/* .select_main{
+    width: 190px;
+    height: 43px;
+    background: #FFFFFF;
+    border: 1px solid #007EFF;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: #007EFF;
+    padding: 12px 16px 12px 16px;
+}
+
+.select_main::after{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12);
+    border-radius: 8px;
+} */
+
+.dropdown{
+    width:180px;
+    height: 42px;
+}
+
+.dropdown::before{
+    content:'';
+    position: absolute;
+    top:22px;
+    right: 4%;
+    z-index: 1000;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #A0A4A8;
+    border-top:2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+}
+
+.dropdown input{
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #007EFF;
+    border-radius: 8px;
+    padding: 0px 16px 0px 16px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    color: #007EFF;
+}
+
+.dropdown .option{
+    width: 256px;
+    height: 128px;
+    position: relative;
+    background: #FFFFFF;
+    /* dropdown / shadow opened */
+
+    box-shadow: 0px 0px 8px rgba(37, 40, 43, 0.12);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    
+}
+
+.dropdown .option div{
+    padding: 12px 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+    color: #52575C;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover{
+    background: #7ab5ef;
+    color: #007EFF;
+}
