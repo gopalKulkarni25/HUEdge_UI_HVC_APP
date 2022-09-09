@@ -8,15 +8,15 @@ import { useLocation } from 'react-router-dom'
 
 const NAV_ARR = [
     {
-        name: "1.choose image",
+        name: "1.Choose image",
         link: "/first"
     },
     {
-        name: "2.choose instance type",
+        name: "2.Choose instance type",
         link: "/second"
     },
     {
-        name: "3.Storage and network",
+        name: "3.Choose Storage and network",
         link: "/third"
     },
     {
@@ -60,7 +60,7 @@ const NavContainer = (props) => {
                     </div>
                 </div>
                 <div className={styles.nav_content_right}>
-                    <Dropdown options={DROP_ARR}/>
+                    <Dropdown options={DROP_ARR} parentName="navContainer" placeholder='Region'/>
                 </div>
             </div>
         </>

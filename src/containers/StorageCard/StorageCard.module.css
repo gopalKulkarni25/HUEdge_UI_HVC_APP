@@ -1,0 +1,105 @@
+.main_wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.remove_vol{
+    float: right;
+    position: relative;
+    top:40px;
+    left: 30px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    width: 33px;
+    height: 33px;
+    text-align: center;
+    cursor: pointer;
+}
+.remove_vol span{
+    position: absolute;
+    top:5px;
+    left: 12px;
+}
+.wrapper{
+    width: 85%;
+    height: 110px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 11px;
+}
+
+.wrapper p{
+    text-align: center;
+    font-weight: 700;
+}
+
+.type{
+    margin-left:12px;
+}
+
+.volume{
+    text-align: center;
+}
+
+.capacity input{
+    width: 114px;
+    height: 29px;
+    margin-left:15px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+}
+
+.encryption{
+    margin-left: 55px;
+}
+
+.encryption input{
+    width: 18px;
+    height: 18px;
+    background-color: #E5E5E5;
+}
+
+.encryption input:checked{
+    appearance: none;
+    background-color: #007EFF;
+    border-radius: 2px;
+}
+
+.iops{
+    text-align: center;
+}
+
+.backup{
+    margin-left: 50px;
+}
+
+.backup input{
+    width: 18px;
+    height: 18px;
+    background-color: #E5E5E5;
+}
+
+.backup input:checked{
+    appearance: none;
+    background-color: #007EFF;
+    border-radius: 2px;
+}
+
+.remarks{
+    margin-right: 15px;
+}
+
+.remarks input{
+    width: 104px;
+    height: 29px;
+    margin-left:30px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+}

@@ -12,7 +12,7 @@ const ImageCard = ({name,desc,radios}) => {
     const updateradioInfo = (price) => {
         cost = price
     }
-    const isSelected = false;
+    let isSelected = false;
 
     const updateData = () => {
         //this works when the users clicks on select with default radio checked
