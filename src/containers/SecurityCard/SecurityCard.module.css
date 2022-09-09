@@ -1,0 +1,34 @@
+.main_wrapper{
+    width: 95%;
+    height: 110px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-bottom:19px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.main_wrapper p{
+    text-align: center;
+    font-weight: 700;
+}
+
+.type{
+    margin-left:12px;
+}
+
+.text_area{
+    margin-left: 30px;
+}
+
+.text_area input{
+    width: 114px;
+    height: 29px;
+    margin-left:30px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+}
+
