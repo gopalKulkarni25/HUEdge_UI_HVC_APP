@@ -8,16 +8,33 @@ export const MainProvider = ({children}) => {
     const [images, setImages] = useState(VM_IMAGES[0].images);
     const [costData, setCostData] = useState([])
     const [totalAmount, setTotalAmount] = useState(0);
+    const [storageCards,setStorageCards] = useState([])
+    const [securityCards,setSecurityCards] = useState([])
+    const [isAuthenticated,setIsAuthenticated] = useState(false)
 
     const updateCostData = (data) => {
         setCostData((prev) => [...prev,data])
         setTotalAmount(prev => (parseInt(prev)+parseInt(data.cost)).toString())
     }
 
+    const updateIsAuthenticated = () => {
+        setIsAuthenticated(true)
+    }
+
     const filterImageList = (region) => {
         console.log(region)
         let filtered_arr = VM_IMAGES.filter((element) => element.region === region)
         setImages(filtered_arr[0].images)
+    }
+
+    const addStorageCards = (storage) => {
+        console.log(storage)
+        setStorageCards(prev => [...prev,storage])
+    }
+
+    const addSecurityCards = (security) => {
+        console.log(security)
+        setSecurityCards(prev => [...prev,security])
     }
 
     
@@ -27,8 +44,13 @@ export const MainProvider = ({children}) => {
         costData,
         filterImageList,
         updateCostData,
-        totalAmount
-        
+        totalAmount,
+        addStorageCards,
+        storageCards,
+        addSecurityCards,
+        securityCards,
+        isAuthenticated,
+        updateIsAuthenticated
     
     }}>{children}</MainContext.Provider>
 }

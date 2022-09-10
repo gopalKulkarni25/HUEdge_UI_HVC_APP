@@ -1,19 +1,115 @@
-import { useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { MainContext } from '../../context/ImageContext/MainContext'
 import Dropdown from '../Dropdown/Dropdown'
 import styles from './StorageCard.module.css'
 
 const OPTIONS = ["Magnetic Disks","SSD"]
 
-const StorageCard = ({isdefault, onRemoveItem, index}) => {
+const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate}) => {
     const [validation,setValidation]= useState({isvalid:true,message:''})
+
+    const {addStorageCards} = useContext(MainContext)
     const capacityRef = useRef('')
+    const encryption = useRef(false)
+    const backup = useRef(false)
+    const remarks=useRef('')
+    let encryptionVal = ''
+    let backupVal = ''
+
+
+    const [allFieldsupdated,setAllFieldsupdated] = useState(false);
+
     const [storageVal,setStorageVal] = useState("")
     let unitval2 = 'TB'
+    let unitval1 = 'GB'
     const [iops,setIops] = useState("");
+
+    // const [volumeData,setVolumeData] = useState({type:'',volume:'',capacity:'',encryption:false,iops:'',backup:false,remarks:''});
+
+    // const onProceed = () => {
+    //     console.log("storage")
+    // }
+
+    let volumeVal = ''
+    
+    // useEffect(() => {
+    //     if(isdefault){
+    //         volumeVal='Root'
+    //     }
+    //     else{
+    //         volumeVal='EXT'
+    //     }
+    //     if(capacityRef.current.value !=='' && storageVal !== '' && iops !=='' && encryption.current.vale !==false){
+    //         onUpdate({storage:storageVal,
+    //                   volume:volumeVal,
+    //                   encryption:encryption.current.checked,
+    //                   iops_val:iops,
+    //                   capacity:capacityRef.current.value,
+    //                   backup:backup.current.checked,
+    //                   remarks:remarks.current.value
+    //                 })
+    //     }
+    // // eslint-disable-next-line
+    // },[allFieldsupdated])
+
+    useEffect(() => {
+        if(updated !== 0){
+        console.log('updating ',updated)
+        if(isdefault){
+            volumeVal='Root'
+        }
+        else{
+            volumeVal='EXT'
+        }
+        if(capacityRef.current.value !=='' && storageVal !== '' && iops !==''){
+            addStorageCards({storage:storageVal,
+                      volume:volumeVal,
+                      encryption:encryption.current.checked,
+                      iops_val:iops,
+                      capacity:capacityRef.current.value,
+                      backup:backup.current.checked,
+                      remarks:remarks.current.value
+                    })
+        }}
+    },[updated])
 
     const handleChange = (val) => {
         capacityRef.current.value = ""
         setStorageVal(val)
+        setAllFieldsupdated(prev => !prev);
+    }
+
+    // useImperativeHandle(
+    //     ref,
+    //     () => ({
+    //         updateContextFromChild() {
+    //             console.log("updating....",storageVal)
+    //         }
+    //     }),
+    // )
+
+    const onEncryptionChange = () => {
+        if(encryption.current.checked === true){
+            setAllFieldsupdated(prev => !prev)
+            encryptionVal = 'true'
+        }
+        else{
+            encryptionVal = 'false'
+        }
+    }
+
+    const onBackupChange = () => {
+        if(backup.current.checked === true){
+            setAllFieldsupdated(prev => !prev)
+            backupVal = 'true'
+        }
+        else{
+            backupVal = 'false'
+        }
+    }
+
+    const onRemarksChange = () => {
+        setAllFieldsupdated(prev => !prev)
     }
 
     const onCapacityChange = () => {
@@ -45,6 +141,9 @@ const StorageCard = ({isdefault, onRemoveItem, index}) => {
             }
             else{
                 setValidation({isvalid:true,message:''})
+                if(capacityRef.current.value.includes(unitval2) || capacityRef.current.value.includes(unitval1)){
+                setAllFieldsupdated(prev => !prev)
+                }
             }
         }
         if(storageVal === "SSD"){
@@ -71,6 +170,9 @@ const StorageCard = ({isdefault, onRemoveItem, index}) => {
             }
             else{
                 setValidation({isvalid:true,message:''})
+                if(capacityRef.current.value.includes(unitval2) || capacityRef.current.value.includes(unitval1)){
+                    setAllFieldsupdated(prev => !prev)
+                }
             }
         }
 
@@ -84,7 +186,7 @@ const StorageCard = ({isdefault, onRemoveItem, index}) => {
                 <div>
                     <p>Type</p>
                     <div className={styles.type}>
-                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder='choose'/>
+                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder='choose' width='148px' height='32px' arrowheight='6px'/>
                     </div>
                 </div>
                 <div>
@@ -102,7 +204,7 @@ const StorageCard = ({isdefault, onRemoveItem, index}) => {
                 <div>
                     <p>Encryption</p>
                     <div className={styles.encryption}>
-                        <input type="checkbox"/>
+                        <input type="checkbox" ref={encryption} onChange={onEncryptionChange} id="encryption" name="encryption" />
                     </div>
                 </div>
                 <div>
@@ -114,13 +216,13 @@ const StorageCard = ({isdefault, onRemoveItem, index}) => {
                 <div>
                     <p>Backup Required</p>
                     <div className={styles.backup}>
-                        <input type="checkbox"/>
+                        <input type="checkbox" ref={backup} onChange={onBackupChange} id="backup" name="backup" />
                     </div>
                 </div>
                 <div>
                     <p>Remarks</p>
                     <div className={styles.remarks}>
-                        <input type="text"/>
+                        <input type="text" ref={remarks} onChange={onRemarksChange}/>
                     </div>
                 </div>
             </div>

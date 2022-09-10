@@ -1,7 +1,12 @@
 .main_wrapper{
     width: 95%;
 }
-
+.sub_content{
+    width: 100%;
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 .radio_buttons{
     margin-top: 10px;
 }
@@ -23,7 +28,9 @@
     height: 17px;
     color: #000000;
 }
-
+.dropdown{
+    margin-top: 10px;
+}
 .radio_buttons div{
     margin-bottom: 5px;
 }
@@ -77,7 +84,7 @@
 
 
 .add_rule{
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 .add_rule button{
@@ -94,4 +101,42 @@
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #FFFFFF;
+}
+
+.button_wrapper{
+    position: absolute;
+    top:700px;
+    left:800px;
+    width: 100%;
+}
+.back_button{
+    width: 130px;
+    height: 50px;
+    background-color:#000000;
+    border-radius: 6px;
+    color:white;    
+    margin-right:10px
+}
+
+.proceed_button{
+    width: 130px;
+    height: 50px;
+    background: #007EFF;
+    color: white;
+    border-radius: 6px;
+    color:white;    
+    margin-right:10px
+}
+
+.rules{
+    width: 338px;
+    height: 38px;
+    margin-top:10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+
+    color: #000000;
 }

@@ -67,7 +67,7 @@ const InstanceContainer = (props) => {
                         type:selectedCPUInstance.type,
                         cost:cpuCost
                     },
-                    cost:cpuCost
+                    cost:cpuCost,
                 })
             }
             setValidationErr({isValid:true,message:''});
