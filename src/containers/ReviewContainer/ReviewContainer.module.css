@@ -1,10 +1,12 @@
 .main_wrapper{
     width: 95%;
+    height: fit-content;
 }
 
 .generate_btn{
     width: 100%;
     margin-top:10px;
+    margin-bottom:30px;
 }
 
 .generate_btn button{
@@ -25,4 +27,141 @@
 
 
     color: #F9F9FA;
+}
+
+.image_wrapper{
+    margin-top:30px;
+}
+
+.heading{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    margin-top:20px;
+    margin-bottom: 20px;
+
+    color: #000000;
+}
+
+.instance_sub{
+    width: 429px;
+    height: 117px;
+    left: 85px;
+    top: 616px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+
+.heading_sub{
+    width: 100%;
+    height: 39px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    margin-top:20px;
+    margin-left:10px;
+    color: #000000;
+
+}
+
+.instance_details{
+    margin-top:10px;
+    margin-left:15px;
+}
+
+.instance_details div{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.button_wrapper{
+    position: relative;
+    top: 130px;
+    left:800px;
+    width: 100%;
+}
+.back_button{
+    width: 130px;
+    height: 50px;
+    background-color:#000000;
+    border-radius: 6px;
+    color:white;    
+    margin-right:10px
+}
+
+.cancel_button{
+    width: 130px;
+    height: 50px;
+    background-color:#FB4E4E;
+    box-shadow: 0px 8px 16px rgba(202, 204, 207, 0.2);
+    border-radius: 8px;
+    color:white;    
+    margin-right:10px
+}
+
+.launch_button{
+    width: 130px;
+    height: 50px;
+    background: #2AC769;
+    box-shadow: 0px 8px 16px rgba(42, 199, 105, 0.16);
+    border-radius: 8px;
+    color: white;   
+    margin-right:10px
+}
+
+.network_section{
+    width: 331px;
+    height: 66px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding-top:25px;
+    padding-left: 25px;
+}
+
+.bandwidth{
+    width: 217px;
+    height: 39px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    color: #007EFF;
+}
+
+.units{
+    width: 217px;
+    height: 39px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
 }

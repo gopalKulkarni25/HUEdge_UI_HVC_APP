@@ -13,7 +13,20 @@ export const MainProvider = ({children}) => {
     const [isAuthenticated,setIsAuthenticated] = useState(false)
 
     const updateCostData = (data) => {
-        setCostData((prev) => [...prev,data])
+        // if(data.component === 'image'){
+        //     setCostData((prev) => ({...prev,image:data}))
+        // }
+        // else if(data.component === 'instance'){
+        //     let temp_arr = [...costData.instance,data]
+        //     setCostData((prev) => ({...prev,instance:[...costData.instance,data]}))
+        // }
+        // else if(data.component === 'storage'){
+        //     setCostData((prev) => ({...prev,storage:[...data]}))
+        // }
+        // else if(data.component === 'security'){
+        //     setCostData((prev) => ({...prev,security:[...data]}))
+        // }
+        setCostData(prev => [...prev,data])
         setTotalAmount(prev => (parseInt(prev)+parseInt(data.cost)).toString())
     }
 

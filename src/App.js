@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Route, Routes,Navigate } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
+import SuccessModel from './components/SuccessModel/SuccessModel';
 import ImageContainer from './containers/ImageContainer/ImageConatiner';
 import InstanceContainer from './containers/InstanceContainer/InstanceContainer';
 import ReviewContainer from './containers/ReviewContainer/ReviewContainer';
@@ -23,6 +24,7 @@ function App() {
           <Route path='five'  element={isAuthenticated ? <ReviewContainer/> : <Navigate to="/first"/>}></Route>
           <Route path='*' element={<p>Page not found</p>}/>
         </Route>
+        <Route path='/model' element={<SuccessModel/>}/>
       </Routes>
     </div>
   );

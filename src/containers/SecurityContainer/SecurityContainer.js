@@ -48,7 +48,8 @@ const SecurityContainer = (props) => {
                         description:card.description,
                         cost:'0'
                     },
-                    cost:'0'
+                    cost:'0',
+                    component:'security'
                 })
             })
             navigate('/five')

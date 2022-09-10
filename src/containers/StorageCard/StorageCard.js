@@ -5,7 +5,7 @@ import styles from './StorageCard.module.css'
 
 const OPTIONS = ["Magnetic Disks","SSD"]
 
-const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate}) => {
+const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate,review,data}) => {
     const [validation,setValidation]= useState({isvalid:true,message:''})
 
     const {addStorageCards} = useContext(MainContext)
@@ -51,6 +51,17 @@ const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate}) => {
     //     }
     // // eslint-disable-next-line
     // },[allFieldsupdated])
+
+
+    //onLoad of the page
+    useEffect(() => {
+        if(review){
+            capacityRef.current.value=data.capacity
+            remarks.current.value = data.remarks ? data.remarks : ''
+            encryption.current.checked = data.encryption
+            backup.current.checked = data.backup
+        }
+    },[])
 
     useEffect(() => {
         if(updated !== 0){
@@ -185,48 +196,50 @@ const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate}) => {
                 <div className={styles.wrapper}>
                 <div>
                     <p>Type</p>
-                    <div className={styles.type}>
-                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder='choose' width='148px' height='32px' arrowheight='6px'/>
+                    <div className={styles.type} style={{ pointerEvents: review ? 'none' : 'auto' }}>
+                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder={review ? data.storage : 'choose'} width='148px' height='32px' arrowheight='6px'/>
                     </div>
                 </div>
                 <div>
                     <p>Volume</p>
-                    <div className={styles.volume}>
+                    {review ? <div className={styles.volume}>
+                        {data.volume}
+                    </div>:<div className={styles.volume}>
                         {isdefault ? 'Root': 'Ext'}
-                    </div>
+                    </div>}
                 </div>
                 <div>
                     <p>Capacity</p>
                     <div className={styles.capacity}>
-                        <input onChange={onCapacityChange} ref={capacityRef} placeholder="eg.10GB" type="text"/>
+                        <input onChange={onCapacityChange} style={{ pointerEvents: review ? 'none' : 'auto' }} ref={capacityRef}  placeholder="eg.10GB" type="text"/>
                     </div>
                 </div>
                 <div>
                     <p>Encryption</p>
                     <div className={styles.encryption}>
-                        <input type="checkbox" ref={encryption} onChange={onEncryptionChange} id="encryption" name="encryption" />
+                        <input type="checkbox" ref={encryption} style={{ pointerEvents: review ? 'none' : 'auto' }} onChange={onEncryptionChange} id="encryption" name="encryption" />
                     </div>
                 </div>
                 <div>
                     <p>IOPS</p>
                     <div className={styles.iops}>
-                        {iops}
+                        {review ? data.iops_val : iops}
                     </div>
                 </div>
                 <div>
                     <p>Backup Required</p>
                     <div className={styles.backup}>
-                        <input type="checkbox" ref={backup} onChange={onBackupChange} id="backup" name="backup" />
+                        <input type="checkbox" ref={backup} style={{ pointerEvents: review ? 'none' : 'auto' }} onChange={onBackupChange} id="backup" name="backup" />
                     </div>
                 </div>
                 <div>
                     <p>Remarks</p>
                     <div className={styles.remarks}>
-                        <input type="text" ref={remarks} onChange={onRemarksChange}/>
+                        <input type="text" ref={remarks} style={{ pointerEvents: review ? 'none' : 'auto' }}  onChange={onRemarksChange}/>
                     </div>
                 </div>
             </div>
-            {!isdefault && <div onClick={() => onRemoveItem(index)}className={styles.remove_vol}>
+            {(!isdefault && !review) && <div onClick={() => onRemoveItem(index)}className={styles.remove_vol}>
                 <span>x</span>
             </div>}
             </div>

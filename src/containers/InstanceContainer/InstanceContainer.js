@@ -68,6 +68,7 @@ const InstanceContainer = (props) => {
                         cost:cpuCost
                     },
                     cost:cpuCost,
+                    component:'instance'
                 })
             }
             setValidationErr({isValid:true,message:''});
@@ -79,7 +80,8 @@ const InstanceContainer = (props) => {
                         type:selectedMemInstance.type,
                         cost:memCost
                     },
-                    cost:memCost
+                    cost:memCost,
+                    component:'instance'
                 })}
                 navigate('/third')
         }
