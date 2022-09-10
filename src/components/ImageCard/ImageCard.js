@@ -7,7 +7,7 @@ const ImageCard = ({name,desc,radios}) => {
     
     let navigate = useNavigate();
 
-    const {updateCostData} = useContext(MainContext)
+    const {updateCostData,updateIsAuthenticated} = useContext(MainContext)
     let cost = ''
     const updateradioInfo = (price) => {
         cost = price
@@ -15,6 +15,7 @@ const ImageCard = ({name,desc,radios}) => {
     let isSelected = false;
 
     const updateData = () => {
+        updateIsAuthenticated(true)
         //this works when the users clicks on select with default radio checked
         if(cost === ''){
             cost = radios[0].price
@@ -27,7 +28,7 @@ const ImageCard = ({name,desc,radios}) => {
                 desc,
                 radios
             },
-            cost
+            cost,
         })
         navigate('/second')
         }

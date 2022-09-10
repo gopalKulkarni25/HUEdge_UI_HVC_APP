@@ -36,6 +36,7 @@
     position: relative;
     top:10px;
     right:25px;
+    fill: #007EFF;
 }
 /* .dropdown::before{
     content:'';
@@ -61,6 +62,10 @@
     margin-bottom: 9px;
     cursor: pointer;
     color: #007EFF;
+}
+
+.dropdown input::placeholder{
+    color:#007EFF;
 }
 
 .dropdown .option{

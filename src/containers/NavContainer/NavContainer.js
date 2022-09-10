@@ -45,6 +45,10 @@ const NavContainer = (props) => {
         })
     },[currentPath])
 
+    const handleChange = (val) => {
+        
+    }
+
     
 
     return <>
@@ -60,7 +64,7 @@ const NavContainer = (props) => {
                     </div>
                 </div>
                 <div className={styles.nav_content_right}>
-                    <Dropdown options={DROP_ARR} parentName="navContainer" placeholder='Region'/>
+                    <Dropdown options={DROP_ARR} parentName="navContainer" onSelect={handleChange} placeholder='US-East 1'/>
                 </div>
             </div>
         </>
