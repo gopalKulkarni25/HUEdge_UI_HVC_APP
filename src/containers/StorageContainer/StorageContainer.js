@@ -1,14 +1,13 @@
 import StorageCard from '../StorageCard/StorageCard';
 import styles from './StorageContainer.module.css'
 import { useContext, useEffect, useRef, useState } from 'react';
-import ReactSlider from "react-slider";
 import { MainContext } from '../../context/ImageContext/MainContext';
 import { useNavigate } from "react-router-dom";
 
 const StorageContainer = (props) => {
     const [newComp,setNewComp] = useState([])
     const [updated,setUpdated] = useState(0);
-    const {storageCards,updateCostData} = useContext(MainContext)
+    const {storageCards,updateCostData,costData} = useContext(MainContext)
     const navigate = useNavigate()
     const networkRef = useRef();
 
@@ -17,10 +16,11 @@ const StorageContainer = (props) => {
     let cost_network = ''
     useEffect(() => {
         console.log(storageCards)
-        if(storageCards.length > 0){
+        if(storageCards.length > 0 && costData.length<4){
             storageCards.forEach((cell) => {
                 
                     if(cell.storage === 'Magnetic Disks'){
+                        // eslint-disable-next-line
                         cost = '20'
                         updateCostData({
                             name:`storage - ${cell.volume}`,
@@ -58,11 +58,12 @@ const StorageContainer = (props) => {
                             component:'storage'
                         })
                     }
+            })
 
-        
-                    let bandwidth = (parseInt(networkRef.current.value)*256)
+            let bandwidth = (parseInt(networkRef.current.value)*256)
                     let bandwidth_str = bandwidth.toString()
                     if(bandwidth < 512){
+                        // eslint-disable-next-line
                         cost_network='0'
                     }
                     else if(bandwidth >=512 && bandwidth <1024 ){
@@ -74,6 +75,10 @@ const StorageContainer = (props) => {
                     else if(bandwidth >=1536 && bandwidth <= 2024){
                         cost_network = '15'
                     }
+                    const index = costData.map(i => i.component).indexOf("network")
+                    console.log(index)
+                    if(index === -1){
+                    console.log('updateing network')
                     updateCostData({
                         name:`Network bandwidth ${bandwidth_str}`,
                         data:{
@@ -82,19 +87,8 @@ const StorageContainer = (props) => {
                         },
                         cost:cost_network,
                         component:'network'
-                    })
-                    
-                navigate('/fourth')
-                // updateCostData({
-                //     name:`storage - ${selectedCPUInstance.volume}`,
-                //     data:{
-                //         volume:`storage - ${selectedCPUInstance.volume}`,
-                //         type:selectedCPUInstance.type,
-                //         cost:cpuCost
-                //     },
-                //     cost:cpuCost
-                // })
-            })
+                    })}
+                    navigate('/security')
         }
     },[storageCards])
 

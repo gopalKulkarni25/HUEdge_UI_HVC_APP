@@ -83,7 +83,7 @@ const InstanceContainer = (props) => {
                     cost:memCost,
                     component:'instance'
                 })}
-                navigate('/third')
+                navigate('/storage')
         }
         else{
 

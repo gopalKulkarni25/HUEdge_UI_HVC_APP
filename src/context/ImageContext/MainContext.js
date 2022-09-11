@@ -9,6 +9,7 @@ export const MainProvider = ({children}) => {
     const [costData, setCostData] = useState([])
     const [totalAmount, setTotalAmount] = useState(0);
     const [storageCards,setStorageCards] = useState([])
+    const [network,setNetwork] = useState({})
     const [securityCards,setSecurityCards] = useState([])
     const [isAuthenticated,setIsAuthenticated] = useState(false)
 
@@ -32,6 +33,10 @@ export const MainProvider = ({children}) => {
 
     const updateIsAuthenticated = () => {
         setIsAuthenticated(true)
+    }
+
+    const updatenetwork = (value) => {
+        setNetwork(value)
     }
 
     const filterImageList = (region) => {
@@ -63,7 +68,9 @@ export const MainProvider = ({children}) => {
         addSecurityCards,
         securityCards,
         isAuthenticated,
-        updateIsAuthenticated
+        updateIsAuthenticated,
+        updatenetwork,
+        network
     
     }}>{children}</MainContext.Provider>
 }

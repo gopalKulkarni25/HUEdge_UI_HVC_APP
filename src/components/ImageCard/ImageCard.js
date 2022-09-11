@@ -34,7 +34,7 @@ const ImageCard = ({name,desc,radios,review,radio_sel}) => {
             cost,
             component:'image'
         })
-        navigate('/second')
+        navigate('/instance')
         }
         isSelected = true;
     }
@@ -53,7 +53,7 @@ const ImageCard = ({name,desc,radios,review,radio_sel}) => {
                         radios.map((radio,index) => {
                         return(<div key={index}>
                         {radios.length>1 && <input type="radio" id="sys" name={`${name}_bit`} value={radio.name} onChange={() => updateradioInfo(radio.price,radios.name)} defaultChecked={index===0?true:false}/>}
-                        <label style={{marginBottom: radios.length === 1 ? '50px':''}} htmlFor="architecture">{radio.name}</label><br></br></div>)
+                        <label htmlFor="architecture">{radio.name}</label><br></br></div>)
                         })
                         // <>
     
@@ -64,7 +64,7 @@ const ImageCard = ({name,desc,radios,review,radio_sel}) => {
                         }
                     </div>
                     {!review && <div className={styles.button}>
-                        <button onClick={updateData}>Select</button>
+                        <button style={{marginTop: radios.length === 1 ? '40px':''}} onClick={updateData}>Select</button>
                     </div>}
                 </div>
             </div>

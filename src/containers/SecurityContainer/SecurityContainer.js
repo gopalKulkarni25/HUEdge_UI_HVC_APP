@@ -16,7 +16,7 @@ const SecurityContainer = (props) => {
     const sgName = useRef('')
     const [securityName,setSecurityName] = useState('')
     const [existingName,setExistingName] = useState('')
-    const {securityCards,updateCostData} = useContext(MainContext)
+    const {securityCards,updateCostData,costData} = useContext(MainContext)
 
     const navigate = useNavigate()
 
@@ -35,7 +35,8 @@ const SecurityContainer = (props) => {
 
     useEffect(() => {
         console.log(securityCards)
-        if(securityCards.length > 0){
+        if(securityCards.length > 0 && costData[costData.length-1].component ==='network'){
+
             securityCards.forEach((card) => {
                 updateCostData({
                     name:`security - ${card.name} type:${card.type}`,
@@ -52,9 +53,9 @@ const SecurityContainer = (props) => {
                     component:'security'
                 })
             })
-            navigate('/five')
+            navigate('/review')
         }
-
+    // eslint-disable-next-line
     },[securityCards])
     const addVolume = () => {
         let randomId = Math.random()
