@@ -3,14 +3,16 @@ import { MainContext } from '../../context/ImageContext/MainContext'
 import styles from './ImageCard.module.css'
 import { useNavigate } from "react-router-dom";
 
-const ImageCard = ({name,desc,radios}) => {
+const ImageCard = ({name,desc,radios,review,radio_sel}) => {
     
     let navigate = useNavigate();
 
     const {updateCostData,updateIsAuthenticated} = useContext(MainContext)
     let cost = ''
-    const updateradioInfo = (price) => {
+    let value= ''
+    const updateradioInfo = (price,val) => {
         cost = price
+        value = val
     }
     let isSelected = false;
 
@@ -19,6 +21,7 @@ const ImageCard = ({name,desc,radios}) => {
         //this works when the users clicks on select with default radio checked
         if(cost === ''){
             cost = radios[0].price
+            value = radios[0].name
         }
         if(!isSelected){
         updateCostData({
@@ -26,11 +29,12 @@ const ImageCard = ({name,desc,radios}) => {
             data:{
                 name,
                 desc,
-                radios
+                radios:value
             },
             cost,
+            component:'image'
         })
-        navigate('/second')
+        navigate('/instance')
         }
         isSelected = true;
     }
@@ -45,15 +49,23 @@ const ImageCard = ({name,desc,radios}) => {
                 </div>
                 <div className={styles.button_select}>
                     <div className={styles.button_radio}>
-                        <input type="radio" id="sys" name={`${name}_bit`} value={radios[0].name} onChange={() => updateradioInfo(radios[0].price)} defaultChecked/>
-                        <label htmlFor="architecture">64-bit (x86)</label><br></br>
-                        <input type="radio" id="sys" name={`${name}_bit`} onChange={() => updateradioInfo(radios[1].price)} value={radios[1].name}/>
-                        <label htmlFor="architecture">64-bit (ARM)</label>
-
+                        {review ? <p>{radio_sel}</p> : 
+                        radios.map((radio,index) => {
+                        return(<div key={index}>
+                        {radios.length>1 && <input type="radio" id="sys" name={`${name}_bit`} value={radio.name} onChange={() => updateradioInfo(radio.price,radios.name)} defaultChecked={index===0?true:false}/>}
+                        <label htmlFor="architecture">{radio.name}</label><br></br></div>)
+                        })
+                        // <>
+    
+                        // <input type="radio" id="sys" name={`${name}_bit`} value={radios[0].name} onChange={() => updateradioInfo(radios[0].price,radios[0].name)} defaultChecked/>
+                        // <label htmlFor="architecture">64-bit (x86)</label><br></br>
+                        //  <input type="radio" id="sys" name={`${name}_bit`} onChange={() => updateradioInfo(radios[1].price,radios[1].name)} value={radios[1].name}/>
+                        // <label htmlFor="architecture">64-bit (ARM)</label></>
+                        }
                     </div>
-                    <div className={styles.button}>
-                        <button onClick={updateData}>Select</button>
-                    </div>
+                    {!review && <div className={styles.button}>
+                        <button style={{marginTop: radios.length === 1 ? '40px':''}} onClick={updateData}>Select</button>
+                    </div>}
                 </div>
             </div>
         </>

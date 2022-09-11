@@ -14,7 +14,7 @@ export const VM_IMAGES = [
                         price: '300'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '280'
                     }
@@ -31,7 +31,7 @@ export const VM_IMAGES = [
                         price: '300'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '280'
                     }
@@ -48,7 +48,7 @@ export const VM_IMAGES = [
                         price: '300'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '280'
                     }
@@ -61,18 +61,13 @@ export const VM_IMAGES = [
                 arhitectures: [
                     {
                         id:1,
-                        name:'64-bit (x86)',
-                        price: '300'
-                    },
-                    {
-                        id:1,
                         name:'64-bit (ARM)',
                         price: '280'
                     }
                 ]
             },
             {
-                id:1,
+                id:5,
                 name:'SUSE Linux Enterprise Server US_E1',
                 description:'Linux 2 comes with 5 years of support. It provides Linux kernel 4.14 tuned for optimal performance.',
                 arhitectures: [
@@ -82,7 +77,7 @@ export const VM_IMAGES = [
                         price: '300'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '280'
                     }
@@ -104,7 +99,7 @@ export const VM_IMAGES = [
                         price: '350'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '290'
                     }
@@ -121,7 +116,7 @@ export const VM_IMAGES = [
                         price: '400'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '200'
                     }
@@ -138,31 +133,15 @@ export const VM_IMAGES = [
                         price: '500'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '300'
                     }
                 ]
             },
+            
             {
                 id:4,
-                name:'Microsoft Windows Server 2019 Base AP_Mumbai',
-                description:'Linux 2 comes with 5 years of support. It provides Linux kernel 4.14 tuned for optimal performance.',
-                arhitectures: [
-                    {
-                        id:1,
-                        name:'64-bit (x86)',
-                        price: '600'
-                    },
-                    {
-                        id:1,
-                        name:'64-bit (ARM)',
-                        price: '190'
-                    }
-                ]
-            },
-            {
-                id:1,
                 name:'SUSE Linux Enterprise Server AP_Mumbai',
                 description:'Linux 2 comes with 5 years of support. It provides Linux kernel 4.14 tuned for optimal performance.',
                 arhitectures: [
@@ -172,7 +151,7 @@ export const VM_IMAGES = [
                         price: '330'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '250'
                     }
@@ -195,7 +174,7 @@ export const VM_IMAGES = [
                         price: '320'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '290'
                     }
@@ -212,7 +191,7 @@ export const VM_IMAGES = [
                         price: '330'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '285'
                     }
@@ -229,7 +208,7 @@ export const VM_IMAGES = [
                         price: '310'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '270'
                     }
@@ -242,18 +221,13 @@ export const VM_IMAGES = [
                 arhitectures: [
                     {
                         id:1,
-                        name:'64-bit (x86)',
-                        price: '320'
-                    },
-                    {
-                        id:1,
                         name:'64-bit (ARM)',
                         price: '290'
                     }
                 ]
             },
             {
-                id:1,
+                id:5,
                 name:'SUSE Linux Enterprise Server US_W1',
                 description:'Linux 2 comes with 5 years of support. It provides Linux kernel 4.14 tuned for optimal performance.',
                 arhitectures: [
@@ -263,7 +237,7 @@ export const VM_IMAGES = [
                         price: '390'
                     },
                     {
-                        id:1,
+                        id:2,
                         name:'64-bit (ARM)',
                         price: '250'
                     }

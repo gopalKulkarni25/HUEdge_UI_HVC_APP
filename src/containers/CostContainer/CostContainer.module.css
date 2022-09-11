@@ -1,7 +1,7 @@
 .main{
     position: absolute;
     width: 23%;
-    min-height: 300px;
+    min-height: 500px;
     height: fit-content;
     left: 74%;
     top: 145px;
@@ -59,7 +59,7 @@
     width: 394px;
     height: 20px;
     position: absolute;
-    top:250px;
+    top:440px;
     border-top: 1px solid #C4C4C4;
 }
 

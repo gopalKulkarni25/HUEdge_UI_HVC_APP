@@ -9,16 +9,34 @@ export const MainProvider = ({children}) => {
     const [costData, setCostData] = useState([])
     const [totalAmount, setTotalAmount] = useState(0);
     const [storageCards,setStorageCards] = useState([])
+    const [network,setNetwork] = useState({})
     const [securityCards,setSecurityCards] = useState([])
     const [isAuthenticated,setIsAuthenticated] = useState(false)
 
     const updateCostData = (data) => {
-        setCostData((prev) => [...prev,data])
+        // if(data.component === 'image'){
+        //     setCostData((prev) => ({...prev,image:data}))
+        // }
+        // else if(data.component === 'instance'){
+        //     let temp_arr = [...costData.instance,data]
+        //     setCostData((prev) => ({...prev,instance:[...costData.instance,data]}))
+        // }
+        // else if(data.component === 'storage'){
+        //     setCostData((prev) => ({...prev,storage:[...data]}))
+        // }
+        // else if(data.component === 'security'){
+        //     setCostData((prev) => ({...prev,security:[...data]}))
+        // }
+        setCostData(prev => [...prev,data])
         setTotalAmount(prev => (parseInt(prev)+parseInt(data.cost)).toString())
     }
 
     const updateIsAuthenticated = () => {
         setIsAuthenticated(true)
+    }
+
+    const updatenetwork = (value) => {
+        setNetwork(value)
     }
 
     const filterImageList = (region) => {
@@ -50,7 +68,9 @@ export const MainProvider = ({children}) => {
         addSecurityCards,
         securityCards,
         isAuthenticated,
-        updateIsAuthenticated
+        updateIsAuthenticated,
+        updatenetwork,
+        network
     
     }}>{children}</MainContext.Provider>
 }

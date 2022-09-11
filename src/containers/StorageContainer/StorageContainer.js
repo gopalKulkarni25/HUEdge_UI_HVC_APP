@@ -1,23 +1,26 @@
 import StorageCard from '../StorageCard/StorageCard';
 import styles from './StorageContainer.module.css'
-import { useContext, useEffect, useState } from 'react';
-import ReactSlider from "react-slider";
+import { useContext, useEffect, useRef, useState } from 'react';
 import { MainContext } from '../../context/ImageContext/MainContext';
 import { useNavigate } from "react-router-dom";
 
 const StorageContainer = (props) => {
     const [newComp,setNewComp] = useState([])
     const [updated,setUpdated] = useState(0);
-    const {storageCards,updateCostData} = useContext(MainContext)
+    const {storageCards,updateCostData,costData} = useContext(MainContext)
     const navigate = useNavigate()
+    const networkRef = useRef();
+
     let temp = []
     let cost = ''
+    let cost_network = ''
     useEffect(() => {
         console.log(storageCards)
-        if(storageCards.length > 0){
+        if(storageCards.length > 0 && costData.length<4){
             storageCards.forEach((cell) => {
                 
                     if(cell.storage === 'Magnetic Disks'){
+                        // eslint-disable-next-line
                         cost = '20'
                         updateCostData({
                             name:`storage - ${cell.volume}`,
@@ -32,7 +35,8 @@ const StorageContainer = (props) => {
                                 remarks:cell.remarks,
                                 cost:cost
                             },
-                            cost:cost
+                            cost:cost,
+                            component:'storage'
                         })
                     }
                     else if(cell.storage === 'SSD'){
@@ -50,23 +54,47 @@ const StorageContainer = (props) => {
                                 remarks:cell.remarks,
                                 cost:cost
                             },
-                            cost:cost
+                            cost:cost,
+                            component:'storage'
                         })
                     }
-                    
-                navigate('/fourth')
-                // updateCostData({
-                //     name:`storage - ${selectedCPUInstance.volume}`,
-                //     data:{
-                //         volume:`storage - ${selectedCPUInstance.volume}`,
-                //         type:selectedCPUInstance.type,
-                //         cost:cpuCost
-                //     },
-                //     cost:cpuCost
-                // })
             })
+
+            let bandwidth = (parseInt(networkRef.current.value)*256)
+                    let bandwidth_str = bandwidth.toString()
+                    if(bandwidth < 512){
+                        // eslint-disable-next-line
+                        cost_network='0'
+                    }
+                    else if(bandwidth >=512 && bandwidth <1024 ){
+                        cost_network = '5'
+                    }
+                    else if(bandwidth >=1024 && bandwidth < 1536){
+                        cost_network = '10'
+                    }
+                    else if(bandwidth >=1536 && bandwidth <= 2024){
+                        cost_network = '15'
+                    }
+                    const index = costData.map(i => i.component).indexOf("network")
+                    console.log(index)
+                    if(index === -1){
+                    console.log('updateing network')
+                    updateCostData({
+                        name:`Network bandwidth ${bandwidth_str}`,
+                        data:{
+                            bandwidth:bandwidth_str,
+                            cost:cost_network
+                        },
+                        cost:cost_network,
+                        component:'network'
+                    })}
+                    navigate('/security')
         }
     },[storageCards])
+
+    const handleNetworkChange = () => {
+        console.log(typeof(networkRef.current.value))
+    }
     const addVolume = () => {
         let randomId = Math.random()
         let temp_obj = {
@@ -107,7 +135,9 @@ const StorageContainer = (props) => {
                     <button onClick={addVolume}>Add Volume</button>
                 </div>
                 <div className={styles.network_slider}>
-                    <ReactSlider />
+                    <div className={styles.network}>Network Bandwidth Configuration</div>
+                    <div className={styles.network_sub}>Outbound Traffic</div>
+                    256GB<input type='range' defaultValue={0} min="1" max="8" step={1} ref={networkRef} onChange={handleNetworkChange}/>2TB
                 </div>
                 <div className={styles.button_wrapper}>
                     <button className={styles.back_button}>Back</button>

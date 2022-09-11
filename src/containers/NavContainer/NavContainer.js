@@ -9,23 +9,23 @@ import { useLocation } from 'react-router-dom'
 const NAV_ARR = [
     {
         name: "1.Choose image",
-        link: "/first"
+        link: "/image"
     },
     {
         name: "2.Choose instance type",
-        link: "/second"
+        link: "/instance"
     },
     {
         name: "3.Choose Storage and network",
-        link: "/third"
+        link: "/storage"
     },
     {
         name: "4.Configure security",
-        link: "/fourth"
+        link: "/security"
     },
     {
         name: "5.Review & Launch",
-        link: "/five"
+        link: "/review"
     },
 
 ]

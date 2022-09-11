@@ -31,7 +31,46 @@
 
 .network_slider{
     position: relative;
-    top:20px;
+    top:50px;
+}
+
+.network{
+    width: 576px;
+height: 39px;
+left: 70px;
+top: 766px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.network_slider .network_sub{
+    margin-top:20px;
+    width: 122px;
+height: 17px;
+left: 74px;
+top: 831px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.network_slider input{
+    margin-top:20px;
 }
 
 .button_wrapper{
