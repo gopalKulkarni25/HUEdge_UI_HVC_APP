@@ -10,6 +10,7 @@ const StorageContainer = (props) => {
     const {storageCards,updateCostData,costData} = useContext(MainContext)
     const navigate = useNavigate()
     const networkRef = useRef();
+    const [validation,setValidation] = useState({isValid:true,message:''})
 
     let temp = []
     let cost = ''
@@ -114,6 +115,9 @@ const StorageContainer = (props) => {
 
     const submitHandler = () => {
         setUpdated(prev => prev+1)
+        if(storageCards.length === 0){
+            setValidation({isValid:false,message:'Please enter the required details'})
+        }
         
     }
 
@@ -121,6 +125,7 @@ const StorageContainer = (props) => {
         <>
         {console.log(updated)}
             <div className={styles.main_wrapper}>
+                {!validation.isValid  && <div style={{color:'red'}}>{validation.message}</div>}
                 <div className={styles.sub_content}>
                 <StorageCard isdefault={true} updated={updated} onRemoveItem={removeItemHandler}  index={null}/>
                 {newComp.map((comp,index) =>{
