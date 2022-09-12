@@ -7,7 +7,7 @@ const ImageContainer = (props) => {
     const {images} = useContext(MainContext)
     return (
         <>
-            <div className={styles.main}>
+            <div className={styles.main} data-testid="image_container">
                 {images.map((image,index) => 
                     <ImageCard name={image.name} key={index} desc={image.description} radios={image.arhitectures}/>
                 )}

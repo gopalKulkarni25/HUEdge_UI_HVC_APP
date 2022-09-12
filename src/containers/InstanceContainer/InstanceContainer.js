@@ -114,7 +114,7 @@ const InstanceContainer = (props) => {
 
     return (
         <>
-            <div className={styles.main}>
+            <div className={styles.main} data-testid='instance'>
                 <div className={styles.card_container}>
                 {
                     INSTANCE_ARR.map((instance,index) => 
@@ -139,7 +139,7 @@ const InstanceContainer = (props) => {
 
                 </div>
                 <div className={styles.button_wrapper}>
-                    <button className={styles.back_button}>Back</button>
+                    <button className={styles.back_button} onClick={() => {navigate('/image')}}>Back</button>
                     <button className={styles.proceed_button} onClick={submitHandler}>Proceed</button>
                 </div>
             </div>

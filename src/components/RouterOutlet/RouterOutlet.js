@@ -3,7 +3,7 @@ import styles from "./RouterOutlet.module.css"
 
 const RouterOutlet = (props) => {
     return <>
-        <div className={styles.container}>
+        <div className={styles.container} data-testid='router-outlet'>
             <Outlet/>
         </div>
     </>

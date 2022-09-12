@@ -1,7 +1,7 @@
 .header{
     position: absolute;
     width: 100%;
-    height: 72px;
+    height: 4rem;
     left: 0px;
     top: 0px;
 
@@ -14,12 +14,12 @@
     width: 95px;
     height: 51px;
     left: 47%;
-    top: 11px;
+    top: 9px;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 42px;
+    font-size: 2.5rem;
     line-height: 51px;
     text-align: center;
 

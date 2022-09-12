@@ -15,6 +15,12 @@ export const SECURITY_GROUPS = [
             protocol:'TCP',
             port:'22',
             source:'0.0.0.0',
+        },
+        {
+            type:'SSH',
+            protocol:'UDP',
+            port:'443',
+            source:'0.0.0.0',
         }
         ]
     },

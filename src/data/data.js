@@ -11,12 +11,12 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (x86)',
-                        price: '300'
+                        price: '243.61'
                     },
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '280'
+                        price: '243.61'
                     }
                 ]
             },
@@ -50,7 +50,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '280'
+                        price: '300'
                     }
                 ]
             },
@@ -62,7 +62,7 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (ARM)',
-                        price: '280'
+                        price: '338.77'
                     }
                 ]
             },
@@ -74,12 +74,12 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (x86)',
-                        price: '300'
+                        price: '200.22'
                     },
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '280'
+                        price: '200.22'
                     }
                 ]
             }
@@ -96,12 +96,12 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (x86)',
-                        price: '350'
+                        price: '350.51'
                     },
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '290'
+                        price: '350.51'
                     }
                 ]
             },
@@ -118,7 +118,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '200'
+                        price: '400'
                     }
                 ]
             },
@@ -135,7 +135,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '300'
+                        price: '500'
                     }
                 ]
             },
@@ -148,12 +148,12 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (x86)',
-                        price: '330'
+                        price: '330.67'
                     },
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '250'
+                        price: '330.67'
                     }
                 ]
             }
@@ -171,12 +171,12 @@ export const VM_IMAGES = [
                     {
                         id:1,
                         name:'64-bit (x86)',
-                        price: '320'
+                        price: '320.21'
                     },
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '290'
+                        price: '320.21'
                     }
                 ]
             },
@@ -193,7 +193,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '285'
+                        price: '330'
                     }
                 ]
             },
@@ -210,7 +210,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '270'
+                        price: '310'
                     }
                 ]
             },
@@ -239,7 +239,7 @@ export const VM_IMAGES = [
                     {
                         id:2,
                         name:'64-bit (ARM)',
-                        price: '250'
+                        price: '390'
                     }
                 ]
             }

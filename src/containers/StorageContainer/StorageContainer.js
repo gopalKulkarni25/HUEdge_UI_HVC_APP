@@ -72,7 +72,7 @@ const StorageContainer = (props) => {
                     else if(bandwidth >=1024 && bandwidth < 1536){
                         cost_network = '10'
                     }
-                    else if(bandwidth >=1536 && bandwidth <= 2024){
+                    else if(bandwidth >=1536 && bandwidth <= 2048){
                         cost_network = '15'
                     }
                     const index = costData.map(i => i.component).indexOf("network")
@@ -80,7 +80,7 @@ const StorageContainer = (props) => {
                     if(index === -1){
                     console.log('updateing network')
                     updateCostData({
-                        name:`Network bandwidth ${bandwidth_str}`,
+                        name:`Network bandwidth ${bandwidth_str}GB`,
                         data:{
                             bandwidth:bandwidth_str,
                             cost:cost_network
@@ -140,7 +140,7 @@ const StorageContainer = (props) => {
                     256GB<input type='range' defaultValue={0} min="1" max="8" step={1} ref={networkRef} onChange={handleNetworkChange}/>2TB
                 </div>
                 <div className={styles.button_wrapper}>
-                    <button className={styles.back_button}>Back</button>
+                    <button className={styles.back_button} onClick={() => {navigate('/instance')}}>Back</button>
                     <button className={styles.proceed_button} onClick={submitHandler}>Proceed</button>
                 </div>
             </div>

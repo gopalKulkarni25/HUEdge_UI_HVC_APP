@@ -41,18 +41,18 @@ const ImageCard = ({name,desc,radios,review,radio_sel}) => {
     
     return (
         <>
-            <div className={styles.main_container}>
+            <div className={styles.main_container} data-testid ='image'>
                 <div className={styles.grey_image}></div>
                 <div className={styles.content}>
                     <div className={styles.content_heading}>{name}</div>
                     <div className={styles.content_desc}>{desc}</div>
                 </div>
                 <div className={styles.button_select}>
-                    <div className={styles.button_radio}>
+                    <div className={styles.button_radio} data-testid='radio'>
                         {review ? <p>{radio_sel}</p> : 
                         radios.map((radio,index) => {
-                        return(<div key={index}>
-                        {radios.length>1 && <input type="radio" id="sys" name={`${name}_bit`} value={radio.name} onChange={() => updateradioInfo(radio.price,radios.name)} defaultChecked={index===0?true:false}/>}
+                        return(<div key={index} >
+                        {radios.length>1 && <input data-testid='radio' type="radio" id="sys" name={`${name}_bit`} value={radio.name} onChange={() => updateradioInfo(radio.price,radios.name)} defaultChecked={index===0?true:false}/>}
                         <label htmlFor="architecture">{radio.name}</label><br></br></div>)
                         })
                         // <>
@@ -64,7 +64,7 @@ const ImageCard = ({name,desc,radios,review,radio_sel}) => {
                         }
                     </div>
                     {!review && <div className={styles.button}>
-                        <button style={{marginTop: radios.length === 1 ? '40px':''}} onClick={updateData}>Select</button>
+                        <button data-testid ='image-button-select' style={{marginTop: radios.length === 1 ? '40px':''}} onClick={updateData}>Select</button>
                     </div>}
                 </div>
             </div>

@@ -1,12 +1,11 @@
 .main_container_selected{
     box-sizing: border-box;
     width: fit-content;
-    height: 64px;
-
+    height: 60px;
     background: #FFFFFF;
     border: 2px solid #007EFF;
     border-radius: 6px;
-    padding: 16px 27px;
+    padding: 14px 27px;
     margin-right:11px;
     cursor: pointer;
 }
@@ -18,7 +17,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 15px;
     line-height: 32px;
     /* identical to box height */
 
@@ -30,12 +29,11 @@
 .main_container_not_selected{
     box-sizing: border-box;
     width: fit-content;
-    height: 64px;
-
+    height: 60px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.29);
     border-radius: 6px;
-    padding: 16px 27px;
+    padding: 14px 27px;
     margin-right:11px;
     cursor: pointer;
 }
@@ -47,7 +45,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 15px;
     line-height: 32px;
     /* identical to box height */
 
