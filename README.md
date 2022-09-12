@@ -1,3 +1,23 @@
+#Project Overview
+
+This is a web app designed for configuring the Virtual Machines 
+
+#Tabs 
+
+1.Image -> Here you can select the virtual machine images for differen regions(US east,Asia pacific mumbai and US west)
+
+2.Instance -> Here you can select the instance configuration depending on you rrequirement (Memory and CPU cores with some presets for generic optimiztion solutions)
+
+3.Storage & Network -> Here you can select betweek Magnetic Disks and SSD and also and also select the bandwidth for your VM
+
+4.Security -> Here you can create and add your own security group with rules or select from existing groups
+
+5.Review and Launch -> On this Page you can review your selections and also generate a JSON file then launch your VM
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
