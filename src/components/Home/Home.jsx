@@ -9,6 +9,7 @@ const Home = (props) => {
     const navigate = useNavigate()
     useEffect(() => {
         navigate('/image')
+    // eslint-disable-next-line
     },[])
     return (
         <>
