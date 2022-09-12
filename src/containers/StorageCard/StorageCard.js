@@ -24,33 +24,10 @@ const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate,review,dat
     let unitval1 = 'GB'
     const [iops,setIops] = useState("");
 
-    // const [volumeData,setVolumeData] = useState({type:'',volume:'',capacity:'',encryption:false,iops:'',backup:false,remarks:''});
-
-    // const onProceed = () => {
-    //     console.log("storage")
-    // }
 
     let volumeVal = ''
     
-    // useEffect(() => {
-    //     if(isdefault){
-    //         volumeVal='Root'
-    //     }
-    //     else{
-    //         volumeVal='EXT'
-    //     }
-    //     if(capacityRef.current.value !=='' && storageVal !== '' && iops !=='' && encryption.current.vale !==false){
-    //         onUpdate({storage:storageVal,
-    //                   volume:volumeVal,
-    //                   encryption:encryption.current.checked,
-    //                   iops_val:iops,
-    //                   capacity:capacityRef.current.value,
-    //                   backup:backup.current.checked,
-    //                   remarks:remarks.current.value
-    //                 })
-    //     }
-    // // eslint-disable-next-line
-    // },[allFieldsupdated])
+   
 
 
     //onLoad of the page
@@ -90,14 +67,7 @@ const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate,review,dat
         setAllFieldsupdated(prev => !prev);
     }
 
-    // useImperativeHandle(
-    //     ref,
-    //     () => ({
-    //         updateContextFromChild() {
-    //             console.log("updating....",storageVal)
-    //         }
-    //     }),
-    // )
+   
 
     const onEncryptionChange = () => {
         if(encryption.current.checked === true){
@@ -197,7 +167,7 @@ const StorageCard = ({isdefault, onRemoveItem, index,updated,onUpdate,review,dat
                 <div>
                     <p>Type</p>
                     <div className={styles.type} style={{ pointerEvents: review ? 'none' : 'auto' }}>
-                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder={review ? data.storage : 'choose'} width='148px' height='32px' arrowheight='6px'/>
+                        <Dropdown options={OPTIONS} onSelect={handleChange} parentName='storage' placeholder={review ? data.storage : 'choose'} width='148px' height='29px' arrowheight='6px'/>
                     </div>
                 </div>
                 <div>

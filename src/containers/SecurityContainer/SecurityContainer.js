@@ -143,6 +143,7 @@ const SecurityContainer = (props) => {
                         <div className={styles.rules}>
                             Rules
                         </div>
+                        <div className={styles.filtered_rules}>
                         {
                             filteredGroup && filteredGroup.map((card,index) => {
                                 console.log()
@@ -151,10 +152,11 @@ const SecurityContainer = (props) => {
                                 </div>)}
                             )
                         }
+                        </div>
                     </div>}
                     </div>
                     <div className={styles.button_wrapper}>
-                    <button className={styles.back_button}>Back</button>
+                    <button className={styles.back_button} onClick={() => {navigate('/storage')}}>Back</button>
                     <button className={styles.proceed_button} onClick={submitHandler}>Proceed</button>
                 </div>
             </div>

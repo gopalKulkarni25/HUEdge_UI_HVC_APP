@@ -1,6 +1,5 @@
 .nav_item_container{
     width: fit-content;
-    height: 44.2px;
     margin-right: 21px;
     background: #FFFFFF;
     color: black;
@@ -8,7 +7,6 @@
 
 .nav_item_container_active{
     width: fit-content;
-    height: 44.2px;
     background: #007EFF;
     color: white;
     margin-right: 21px;
@@ -16,11 +14,11 @@
 
 .nav_content{
     display: inline-block;
-    height: 20px;
+    height: fit-content;
     margin: 14px 10px 10px 8px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.66rem;
     line-height: 17px;
 }

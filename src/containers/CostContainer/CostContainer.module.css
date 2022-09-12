@@ -1,7 +1,7 @@
 .main{
     position: absolute;
     width: 23%;
-    min-height: 500px;
+    min-height: 300px;
     height: fit-content;
     left: 74%;
     top: 145px;
@@ -31,18 +31,30 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 17px;
     /* identical to box height */
 
 
     color: #000000;
-    width: 80%;
-    height: 17px;
+    width: 85%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
 }
 
-.content span{
-    float: right;
+.name{
+    width: 80%;
+}
+
+.cost{
+    width: 10%;
+}
+
+.details{
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 10px;
 }
 
 .total{
@@ -53,13 +65,12 @@
     font-size: 20px;
     line-height: 17px;
     /* identical to box height */
-
+    margin-bottom: 20px;
 
     color: #000000;
-    width: 394px;
+    width: 85%;
     height: 20px;
-    position: absolute;
-    top:440px;
+  
     border-top: 1px solid #C4C4C4;
 }
 

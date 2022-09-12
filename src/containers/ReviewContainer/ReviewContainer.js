@@ -6,17 +6,17 @@ import styles from './ReviewContainer.module.css'
 import StorageCard from '../StorageCard/StorageCard'
 import SecurityCard from '../SecurityCard/SecurityCard'
 import SuccessModel from '../../components/SuccessModel/SuccessModel'
+import { useNavigate } from 'react-router-dom'
 
 const ReviewContainer = (props) => {
-    const [reviewData,setReviewData] = useState([])
     const {costData} = useContext(MainContext)
     const [storage,setStorage] = useState([])
     const [security,setSecurity] = useState([])
     const [success,setSuccess] = useState(false)
+    const navigate = useNavigate()
 
     //on load of review page
     useEffect(() => {
-        setReviewData(costData)
         let temp_storage = []
         let temp_security = []
         costData.forEach((data) => {
@@ -29,6 +29,7 @@ const ReviewContainer = (props) => {
                 setSecurity(temp_security)
             }
         })
+        // eslint-disable-next-line
     },[])
 
     const generateJson = () => {
@@ -62,7 +63,7 @@ const ReviewContainer = (props) => {
                 <div className={styles.generate_btn}>
                     <button onClick={generateJson}>Generate JSON</button>
                 </div>
-
+                <div className={styles.sub_wrapper}>
                 <div className={styles.image_wrapper}>
                     <div className={styles.heading}>Image</div>
                     <ImageCard review={true} radio_sel={costData[0].data.radios} name={costData[0].data.name} desc={costData[0].data.desc}/>
@@ -114,10 +115,10 @@ const ReviewContainer = (props) => {
                         }
                     </div>}
                 </div>
-
+                </div>
                 <div className={styles.button_wrapper}>
                     <button className={styles.cancel_button}>Canel</button>
-                    <button className={styles.back_button}>Back</button>
+                    <button className={styles.back_button} onClick={() => {navigate('/security')}}>Back</button>
                     <button className={styles.launch_button} onClick={successHandler}>Launch</button>
                 </div>
 

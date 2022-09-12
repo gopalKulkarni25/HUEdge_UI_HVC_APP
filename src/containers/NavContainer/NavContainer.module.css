@@ -12,7 +12,7 @@
 
 .nav_content_right{
     width: 19%;
-    margin-top:8px;
+    margin-top:0.5rem;
     /* margin-left:350px; */
 }
 
@@ -30,7 +30,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.8rem;
     line-height: 17px;
 
     color: #FFFFFF;
@@ -43,7 +43,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 44px;
+    font-size: 2rem;
     line-height: 54px;
     color: #000000;
 }

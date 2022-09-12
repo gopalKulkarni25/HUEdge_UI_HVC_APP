@@ -12,23 +12,24 @@ export const MainProvider = ({children}) => {
     const [network,setNetwork] = useState({})
     const [securityCards,setSecurityCards] = useState([])
     const [isAuthenticated,setIsAuthenticated] = useState(false)
+    const [updateData,setUpdateData] = useState({image:{},instance:[],storage:[],security:[]})
 
     const updateCostData = (data) => {
         // if(data.component === 'image'){
-        //     setCostData((prev) => ({...prev,image:data}))
+        //     setUpdateData((prev) => ({...prev,image:data}))
         // }
         // else if(data.component === 'instance'){
         //     let temp_arr = [...costData.instance,data]
-        //     setCostData((prev) => ({...prev,instance:[...costData.instance,data]}))
+        //     setUpdateData((prev) => ({...prev,instance:[...updateData.instance,data]}))
         // }
         // else if(data.component === 'storage'){
-        //     setCostData((prev) => ({...prev,storage:[...data]}))
+        //     setUpdateData((prev) => ({...prev,storage:[...data]}))
         // }
         // else if(data.component === 'security'){
-        //     setCostData((prev) => ({...prev,security:[...data]}))
+        //     setUpdateData((prev) => ({...prev,security:[...data]}))
         // }
         setCostData(prev => [...prev,data])
-        setTotalAmount(prev => (parseInt(prev)+parseInt(data.cost)).toString())
+        setTotalAmount(prev => (parseFloat(prev)+parseFloat(data.cost)).toString())
     }
 
     const updateIsAuthenticated = () => {

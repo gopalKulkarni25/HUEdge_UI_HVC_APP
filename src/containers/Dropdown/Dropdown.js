@@ -25,16 +25,17 @@ const Dropdown = ({options, parentName, placeholder, onSelect, width,height,arro
     }
     
     return <>
-        <div className={styles.dropdown} style={(width && height) && {width:width,height:height}}>
+        <div className={styles.dropdown} style={(width && height) && {width:width,height:height}} data-testid='dropdown'>
             <div className={styles.main_wrapper}>
-                <input onClick={showDropdown}type='text' className={styles.textBox} placeholder={selectedval.length>0 ? selectedval : placeholder} readOnly/>
+                <input data-testid='click' onClick={showDropdown}type='text' className={styles.textBox} placeholder={selectedval.length>0 ? selectedval : placeholder} readOnly/>
                 <div className={styles.arrow} style={(arrowheight) && {top:arrowheight}}>
                     <Arrowsvg/>
                 </div>
             </div>
             {toggleDropdown && <div className={styles.option} style={(width) && {width:width}}>
                 {options && options.map((option,index) => 
-                        <div type="text" value={option} key={index} onClick={() => handleSelect(option)} readOnly><span>{option}</span></div>
+                // eslint-disable-next-line
+                        <div role='options' type="text" value={option} key={index} onClick={() => handleSelect(option)} readOnly>{option}</div>
                     )
                 }
             </div>}
